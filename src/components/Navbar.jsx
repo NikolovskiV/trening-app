@@ -11,11 +11,7 @@ function Navbar() {
   return (
     <nav>
       <div className="container nav__container">
-        <Link
-          to="/home"
-          className="logo"
-          onClick={() => setIsNavbarShowing(false)}
-        >
+        <Link to="/" className="logo">
           <img src={Logo} alt="Nav Logo" />
         </Link>
         <ul
@@ -27,6 +23,7 @@ function Navbar() {
             return (
               <li key={index}>
                 <NavLink
+                  end
                   to={path}
                   className={({ isActive }) => (isActive ? "active-nav" : "")}
                   onClick={() => setIsNavbarShowing((prev) => !prev)}
